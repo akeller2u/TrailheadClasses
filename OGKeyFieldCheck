@@ -1,0 +1,24 @@
+trigger KeyFieldCheck on Lead (before insert) {
+	Integer keyFields = 0;
+    for (Lead L : Trigger.new){
+        if(L.FirstName != null){
+            keyFields++;
+        }
+        if (L.LastName != null){
+            keyFields++;
+        }
+        if (L.Email != null){
+            keyFields++;
+        }
+        if (L.Phone != null){
+            keyFields++;
+        }
+        if (L.Website != null){
+            keyFields++;
+        }
+        if (L.Title != null){
+            keyFields++;
+        }
+         L.Key_Fields_Populated__c = keyFields;
+    }
+}
