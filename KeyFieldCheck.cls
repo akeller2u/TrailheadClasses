@@ -40,7 +40,7 @@ trigger KeyFieldCheck on Lead (after insert) {
                  }
             if (L.Phone != null){
                 keyFields++;
-                Task t = new Task(Priority = 'Low', Status = 'In Progress', Subject = 'Verify the Priority field', WhoId = L.Id);
+                Task t = new Task(Priority = 'Low', Status = 'In Progress', Subject = 'Verify the Phone field', WhoId = L.Id);
                 fieldsToVerify.add(t);
                 }
             if (L.Website != null){
